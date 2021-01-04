@@ -1,0 +1,15 @@
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "../docker/Dockerfile",
+	},
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+	},
+	"extensions": [
+		"ms-vscode.cpptools",
+		"ms-vscode.cmake-tools",
+		"twxs.cmake",
+	],
+	"remoteUser": "vscode"
+}
