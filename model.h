@@ -17,8 +17,10 @@ public:
     float confidence{};
     QString label;
   };
+  using Results = QVector<Result>;
 
-  QVector<Result> runInference(const QString &filename);
+  Results runInference(const QString &filename);
+  Results runInference(const QImage &image);
 
 private:
   QStringList labels;

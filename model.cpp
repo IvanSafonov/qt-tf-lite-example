@@ -189,7 +189,7 @@ namespace
   }
 } // namespace
 
-QVector<Model::Result> Model::runInference(const QString &filename)
+Model::Results Model::runInference(const QString &filename)
 {
   QImage image(filename);
   if (image.isNull())
@@ -197,7 +197,11 @@ QVector<Model::Result> Model::runInference(const QString &filename)
     qWarning() << "Failed to load image" << filename;
     return {};
   }
+  return runInference(image);
+}
 
+Model::Results Model::runInference(const QImage &image)
+{
   int imageWidth = image.width();
   int imageHeight = image.height();
 
